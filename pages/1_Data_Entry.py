@@ -19,8 +19,7 @@ def add_record(_date, exercise, reps, weight):
     if _id:
         with message_area:
             st.success("New record added")
-        # time.sleep(3)
-        # message_area.empty()
+
 
 def convert_date_to_string(_date):
     return _date.strftime("%Y-%m-%d")
@@ -32,6 +31,7 @@ def get_exercise_set():
     exercise = client.exercise.exercise
     raw = exercise.find({}, {'exercise': 1, '_id': 0})
     return { item.get('exercise') for item in raw }
+
 
 exercise_set = get_exercise_set()
 
