@@ -9,10 +9,12 @@ MONGO_PASSWORD = os.environ.get('MONGO_PASSWORD')
 URI = f"mongodb+srv://rc:{MONGO_PASSWORD}@apps.sdrf5qb.mongodb.net/exercise"
 
 st.header('Home')
+message_area = st.empty()
 
 @st.experimental_singleton
 def get_mongo_client():
     client = pymongo.MongoClient(URI)
+    message_area.write('Welcome to Exercise Tracker...ready!')
     return client
 
 if 'mongo_client' not in st.session_state:
