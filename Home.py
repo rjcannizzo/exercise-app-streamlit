@@ -8,8 +8,9 @@ dotenv.load_dotenv('.env')
 MONGO_PASSWORD = os.environ.get('MONGO_PASSWORD')
 URI = f"mongodb+srv://rc:{MONGO_PASSWORD}@apps.sdrf5qb.mongodb.net/exercise"
 
-st.header('Home')
+st.header('Home :jack_o_lantern: \u25b2')
 message_area = st.empty()
+
 
 @st.experimental_singleton
 def get_mongo_client():
