@@ -1,6 +1,5 @@
 import streamlit as st
 import datetime
-import pymongo
 
 st.title("Add A Record")
 
