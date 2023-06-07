@@ -8,14 +8,13 @@ dotenv.load_dotenv('.env')
 MONGO_PASSWORD = os.environ.get('MONGO_PASSWORD')
 URI = f"mongodb+srv://rc:{MONGO_PASSWORD}@apps.sdrf5qb.mongodb.net/exercise"
 
-st.header('Home :jack_o_lantern: \u25b2')
+st.header('Exercise Tracker')
 message_area = st.empty()
 
 
 @st.experimental_singleton
 def get_mongo_client():
-    client = pymongo.MongoClient(URI)
-    message_area.write('Welcome to Exercise Tracker...ready!')
+    client = pymongo.MongoClient(URI)    
     return client
 
 if 'mongo_client' not in st.session_state:
